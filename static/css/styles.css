@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Dark background for better neon contrast */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevents scroll bars from appearing */
+}
+
+.chat-container {
+    width: 400px;
+    background-color: #000; /* Background matches body for a seamless neon effect */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00ffea, 0 0 25px #00ffea, 0 0 35px #00ffea; /* Neon glow around the container */
+    animation: fadeInContainer 1s ease-in-out; /* Fade-in animation for container */
+}
+
+@keyframes fadeInContainer {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+#chatbox {
+    height: 300px;
+    overflow-y: auto;
+    border: 2px solid #ef3bb9; /* Border color matches neon glow */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #111; /* Slightly darker background inside chatbox */
+    box-shadow: inset 0 0 10px #00ffea; /* Neon glow inside the chatbox */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Spacing between messages */
+}
+
+#chatbox div {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #222; /* Default background for messages */
+    box-shadow: 0 0 5px #00ffea; /* Subtle glow around messages */
+    color: #fff;
+    margin: 5px;
+    opacity: 0; /* Initial state for animation */
+    animation: messageFadeIn 0.5s ease-in-out forwards; /* Fade-in animation */
+    position: relative;
+}
+
+@keyframes messageFadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* User message: odd children (1st, 3rd, 5th, etc.) */
+#chatbox div:nth-child(odd) {
+    align-self: flex-end; /* Align user messages to the right */
+    background-color: #ef3bb9; /* Background color for user messages */
+    box-shadow: 0 0 5px #ef3bb9; /* Subtle glow for user messages */
+    animation-delay: 0.1s; /* Delay for user messages to appear */
+}
+
+/* Bot message: even children (2nd, 4th, 6th, etc.) */
+#chatbox div:nth-child(even) {
+    align-self: flex-start; /* Align bot messages to the left */
+    background-color: #9c2fd3; /* Background color for bot messages */
+    box-shadow: 0 0 5px #3f61f5; /* Subtle glow for bot messages */
+    animation-delay: 0.2s; /* Slight delay for bot messages to appear */
+}
+
+#chat-form {
+    display: flex;
+    align-items: center;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #00ffea; /* Border color matches neon glow */
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #000; /* Match background color to body */
+    color: #fff;
+    box-shadow: 0 0 10px #00ffea; /* Neon glow for input box */
+    outline: none;
+    animation: fadeInInput 0.5s ease-in-out; /* Fade-in animation for input */
+}
+
+@keyframes fadeInInput {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+button {
+    padding: 10px;
+    background-color: #000; /* Match background color to body */
+    color: #00ffea; /* Neon text color */
+    border: 2px solid #00ffea; /* Border color matches neon glow */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea, 0 0 30px #00ffea; /* Neon glow for button */
+    transition: all 0.2s ease-in-out;
+    animation: fadeInButton 0.5s ease-in-out; /* Fade-in animation for button */
+}
+
+@keyframes fadeInButton {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+button:hover {
+    color: #fff;
+    background-color: #00ffea; /* Invert glow color on hover */
+    box-shadow: 0 0 20px #00ffea, 0 0 30px #00ffea, 0 0 40px #00ffea; /* More intense glow on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Button press effect */
+}
