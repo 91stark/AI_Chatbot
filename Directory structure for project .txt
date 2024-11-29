@@ -1,0 +1,9 @@
+/chatbot
+│
+├── app.py               
+├── intents.json        
+├── templates/           
+│   └── index.html       
+├── static/               
+│   ├── css/           
+        └── styles.css   
