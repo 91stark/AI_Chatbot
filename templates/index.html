@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIRTUAL BOT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div id="chatbox">
+            <!-- Chat messages will appear here -->
+        </div>
+        <form id="chat-form" action="#" method="POST">
+            <input type="text" id="user-input" placeholder="Type your message..." required autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("chat-form").onsubmit = async function(e) {
+            e.preventDefault();
+            const userInput = document.getElementById("user-input").value;
+            const response = await fetch('/get_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userInput })
+            });
+            const data = await response.json();
+            addMessage('𝕐𝕠𝕦 :  ' + userInput);
+            addMessage('𝔹𝕠𝕥 : ' + data.response);
+            document.getElementById("user-input").value = '';
+        };
+
+        function addMessage(message) {
+            const chatbox = document.getElementById("chatbox");
+            const messageElement = document.createElement("div");
+            messageElement.textContent = message;
+            chatbox.appendChild(messageElement);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
