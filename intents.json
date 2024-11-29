@@ -1,0 +1,45 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["hello", "hi", "hey", "greetings", "what's up", "howdy"],
+        "responses": ["Hello! How can I help you?", "Hi there! What can I do for you?", "Hey! How's it going?"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["bye", "see you", "goodbye", "take care"],
+        "responses": ["Goodbye! Have a nice day!", "See you later!", "Take care!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["thanks", "thank you", "appreciate it"],
+        "responses": ["You're welcome!", "No problem!", "Happy to help!"]
+      },
+      {
+        "tag": "name_query",
+        "patterns": ["what's your name", "what is your name", "who are you", "your name"],
+        "responses": [" msyelf general bot and im adjustable"]
+      },
+      {
+        "tag": "creator_query",
+        "patterns": ["who created you", "who made you", "who is your creator", "who built you"],
+        "responses": ["I was created by Kaushal.", "Kaushal is my creator.", "I was built by Kaushal."]
+      },
+      {
+        "tag": "how_are_you",
+        "patterns": ["how are you", "how's it going", "how are you doing", "are you okay"],
+        "responses": ["I'm just a bot, but I'm here to help!", "I'm doing great, thanks for asking!", "I'm ready to assist you!"]
+      },
+      {
+        "tag": "whats_up",
+        "patterns": ["what's up", "what is up", "sup", "what's happening"],
+        "responses": ["Not much, just here to chat!", "All good here! How about you?", "Just waiting to assist you!"]
+      },
+      {
+        "tag": "unknown",
+        "patterns": [],
+        "responses": ["I'm not sure how to respond to that.", "Can you please rephrase?"]
+      }
+    ]
+  }
+  
